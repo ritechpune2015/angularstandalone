@@ -1,0 +1,48 @@
+<!--<h2> If -Else </h2>
+
+@if(val==1)
+{
+    <span> Value is one </span>
+}
+@else if(val==2)
+{
+    <span> Value is Two </span>
+}
+@else {
+      <span> Invalid Value</span>
+}
+
+<h2> Switch Case </h2>
+@switch(val)
+{
+    @case(1) {<span> Value is one </span>}
+    @case(2) {<span> Value is two</span> }
+    @case(3) {<span> Value is three </span>}
+    @default {<span> Default </span>}
+}-->
+    <h2> Product List </h2>
+    <table>
+        <thead>
+            <tr>
+                <th> Sr. No. </th>
+                <th> Product ID </th>
+                <th> Product Name </th>
+                <th> Mfg Name </th>
+                <th> Price </th> 
+                <th> Rating </th> 
+            </tr>
+        </thead>
+        <tbody>
+            @for(temp of prods;track temp.productID;let ind=$index)
+            {
+            <tr>
+                <td>{{ind+1}}</td>
+                <td>{{temp.productID}}</td>
+                <td>{{temp.productName|uppercase}}</td>
+                <td>{{temp.mfgName}}</td>
+                <td>{{temp.price|currency}}</td>
+                <td>{{temp.rating}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
